@@ -24,7 +24,8 @@ const service_typeRoutes = require('./routes/service_types');
 
 
 
-const api = process.env.API_URL||5000;
+const api = process.env.API_URL;
+const PORT = process.env.PORT||5000;
 
 app.use(`${api}/customers`, customerRoutes);
 app.use(`${api}/mechanics`, mechanicRoutes);
@@ -51,7 +52,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 })
 
 //Server
-app.listen(api, ()=>{
+app.listen(PORT, ()=>{
 
     console.log('server is running http://localhost:3000');
 })
