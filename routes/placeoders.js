@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-router.get(`/:id`, async (req, res) => {
+router.get(`/`, async (req, res) => {
   const placeoderList = await PlaceOder.find();
 
   if (!placeoderList) {
@@ -70,6 +70,7 @@ router.put(`/customer/:id`, async (req, res) => {
 });
 router.get(`/:id`, async (req, res) => {
   const placeoderList = await PlaceOder.findAll({ customer_id: req.params.id });
+console.log(placeoderList)
   if (!placeoderList) {
     res.status(500).json({ success: false });
   }
