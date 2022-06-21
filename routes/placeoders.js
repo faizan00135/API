@@ -69,7 +69,7 @@ router.put(`/customer/:id`, async (req, res) => {
   res.send({ order, status: 200 });
 });
 router.get(`/:id`, async (req, res) => {
-  const placeoderList = await PlaceOder.findAll({ customer_id: req.params.id });
+  const placeoderList = await PlaceOder.find({ customer_id: req.params.id });
 console.log(placeoderList)
   if (!placeoderList) {
     res.status(500).json({ success: false });
