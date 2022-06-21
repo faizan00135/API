@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-router.get(`/`, async (req, res) => {
+router.get(`/:id`, async (req, res) => {
   const placeoderList = await PlaceOder.find();
 
   if (!placeoderList) {
