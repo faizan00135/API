@@ -39,6 +39,7 @@ router.post(`/`, async (req, res) => {
       password: req.body.password,
       phone_number: req.body.phone_number,
       experties: req.body.experties,
+     
       
     });
     mechanic = await mechanic.save();
