@@ -70,7 +70,7 @@ router.put(`/customer/:id`, async (req, res) => {
 });
 router.get(`/customerorder/:id`, async (req, res) => {
   const placeoderList = await PlaceOder.find({ customer_id: req.params.id });
-
+console.log(placeoderList)
   if (!placeoderList) {
     res.status(500).json({ success: false });
   }
