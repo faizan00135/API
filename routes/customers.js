@@ -43,9 +43,10 @@ router.put(`/name/:id`, async (req, res) => {
     return;
   }
 
-  console.log(user)
   user.first_name=req.body.first_name;
-  user.last_name=req.body.last_name
+  user.last_name=req.body.last_name;
+  console.log(user)
+
   res.send({user,status:200});
 });
 
