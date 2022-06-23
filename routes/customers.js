@@ -40,8 +40,11 @@ router.put(`/name/:id`, async (req, res) => {
   
   if (!user) {
     res.send("Not Done");
+    return;
   }
-
+   user = await Customer.find(
+    { _id: req.params.id },
+  );
   res.send({user,status:200});
 });
 
