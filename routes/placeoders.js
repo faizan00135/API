@@ -35,8 +35,8 @@ router.post(`/`, async (req, res) => {
   res.send({ placeoder, status: 200 });
 });
 
-router.put(`/mechanic/:id`, async (req, res) => {
-  const order = await PlaceOder.findOne({ mechanic_id: req.params.id });
+router.get(`/mechanic/:id`, async (req, res) => {
+  const order = await PlaceOder.find({ mechanic_id: req.params.id });
   console.log(order);
   if (!order) {
     res.send("Not Done");
