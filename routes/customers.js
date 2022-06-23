@@ -36,7 +36,7 @@ router.put(`/name/:id`, async (req, res) => {
       last_name: req.body.last_name,
     }
   );
-  console.log(req.params.id)
+  console.log(req.body.first_name,req.params.id)
   
   if (!user) {
     res.send("Not Done");
