@@ -42,9 +42,7 @@ router.put(`/name/:id`, async (req, res) => {
     res.send("Not Done");
     return;
   }
-   user = await Customer.find(
-    { _id: req.params.id },
-  );
+  console.log(user)
   res.send({user,status:200});
 });
 
