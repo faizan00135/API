@@ -62,7 +62,7 @@ router.put(`/phonenumber/:id`, async (req, res) => {
   if (!user) {
     res.send("Not Done");
   }
-
+  user.phone_number=req.body.phone_number;
   res.send({user,status:200});
 });
 
@@ -78,7 +78,7 @@ router.put(`/password/:id`, async (req, res) => {
   if (!user) {
     res.send("Not Done");
   }
-
+  user.password=req.body.password;
   res.send({user,status:200});
 });
 
